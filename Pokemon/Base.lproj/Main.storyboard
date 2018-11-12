@@ -24,28 +24,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-JM-noD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-JM-noD">
                                 <rect key="frame" x="163" y="106" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="SubmitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ej-w0-ETq"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wGK-mh-bDH">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wGK-mh-bDH">
+                                <rect key="frame" x="0.0" y="186" width="375" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f58-AC-1Ys">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eyr-lw-GoK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FBQ-hZ-zH6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wGK-mh-bDH" secondAttribute="trailing" id="Oa1-Kn-NuI"/>
                             <constraint firstItem="eyr-lw-GoK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="YdU-Bo-sjb"/>
+                            <constraint firstItem="wGK-mh-bDH" firstAttribute="top" secondItem="zLA-JM-noD" secondAttribute="bottom" constant="50" id="cPF-3l-7PI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eyr-lw-GoK" secondAttribute="trailing" constant="16" id="caa-AS-Tq0"/>
+                            <constraint firstItem="zLA-JM-noD" firstAttribute="centerX" secondItem="eyr-lw-GoK" secondAttribute="centerX" id="pDk-hN-eK1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wGK-mh-bDH" secondAttribute="bottom" id="rDP-JI-ZCU"/>
+                            <constraint firstItem="wGK-mh-bDH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sfA-lQ-NSb"/>
+                            <constraint firstItem="zLA-JM-noD" firstAttribute="top" secondItem="eyr-lw-GoK" secondAttribute="bottom" constant="31" id="vMs-gL-31V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="ImageView" destination="f58-AC-1Ys" id="mFI-bO-9cz"/>
+                        <outlet property="PokemonInfoTextView" destination="wGK-mh-bDH" id="LOn-DP-WNc"/>
+                        <outlet property="PokemonNameTextField" destination="eyr-lw-GoK" id="dcC-ZN-v2t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
