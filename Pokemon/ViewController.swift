@@ -13,7 +13,7 @@ import SwiftyJSON
 class ViewController: UIViewController {
     @IBOutlet weak var PokemonNameTextField: UITextField!
     @IBOutlet weak var PokemonInfoTextView: UITextView!
-    @IBOutlet weak var ImageView: UIImageView!
+
     
     let pokemonURL = "https://pokeapi.co/api/v2/pokemon/"
     
@@ -52,6 +52,23 @@ class ViewController: UIViewController {
             case.success(let value):
                 let json = JSON(value)
                 self.PokemonInfoTextView.text = json["Information"].stringValue
+                var pokeId = json["id"].stringValue
+                var pokeNames = json["name"].stringValue
+                //Preparing format for organized info
+                let format = """
+                Name: \(pokeNames.self)
+                
+                Id: \(pokeId.self)
+                Stats: 
+                Type:
+                Species:
+                Forms:
+                Height:
+                Weight:
+                Location:
+                Moves:
+                Abilities:
+                """
             case.failure(let error):
                 self.PokemonInfoTextView.text = "Try Again"
                 print(error.localizedDescription)
